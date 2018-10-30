@@ -1,0 +1,5 @@
+
+Ysquid:UselessImportCheck"0Remove this unused import 'java.util.ArrayList'.(÷‰îƒ8¨‹Ç«ì,
+Š"squid:ClassVariableVisibilityCheck"RMake recipe a static final constant or non-public and provide accessors if needed.(Êì‰¾şÿÿÿÿ8œÖ½«ì,
+"squid:ClassVariableVisibilityCheck"XMake participants a static final constant or non-public and provide accessors if needed.(¸ŸÂşÿÿÿÿ8œÖ½«ì,
+ƒ"squid:ClassVariableVisibilityCheck"PMake date a static final constant or non-public and provide accessors if needed.(ùèæá8œÖ½«ì,

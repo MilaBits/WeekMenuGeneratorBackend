@@ -1,0 +1,9 @@
+
+psquid:S00116"SRename this field "base_uri" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(øÃ–ò8œÖ½«ì,
+ssquid:S1450"WRemove the "base_uri" field and declare it as a local variable in the relevant methods.(øÃ–ò8œÖ½«ì,
+squid:S1186"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(«¤ÜÕ8œÖ½«ì,
+csquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(«¤ÜÕ8œÖ½«ì,
+lsquid:S1450"PRemove the "c" field and declare it as a local variable in the relevant methods.(’«ö±8œÖ½«ì,
+§%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(‚ëô¡şÿÿÿÿ8œÖ½«ì,
+hsquid:S00112"FDefine and throw a dedicated exception instead of using a generic one.(‚ëô¡şÿÿÿÿ8œÖ½«ì,
+tsquid:S1450"SRemove the "port" field and declare it as a local variable in the relevant methods.(ß³†ÿÿÿÿÿ8œÖ½«ì,

@@ -1,14 +1,16 @@
 package nl.fhict.fun3.server;
 
+import org.junit.After;
+import org.junit.Before;
+import org.junit.Test;
 import server.App;
-import java.text.MessageFormat;
+
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
 import javax.ws.rs.client.WebTarget;
-import org.junit.After;
+import java.text.MessageFormat;
+
 import static org.junit.Assert.assertEquals;
-import org.junit.Before;
-import org.junit.Test;
 
 
 public class AppTest {
