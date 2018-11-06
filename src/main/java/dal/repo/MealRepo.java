@@ -14,8 +14,8 @@ public class MealRepo implements IRepo<Meal> {
     }
 
     @Override
-    public Meal get() {
-        return context.get();
+    public Meal get(int id) {
+        return context.get(id);
     }
 
     @Override

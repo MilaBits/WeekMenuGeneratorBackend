@@ -2,7 +2,7 @@ package server.resources;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dal.context.MealMemoryContext;
+import dal.context.MealContext;
 import dal.repo.MealRepo;
 import domain.Meal;
 import server.ApiResponseMessage;
@@ -18,7 +18,7 @@ import java.util.ArrayList;
 @Path("/meals")
 public class Meals {
 
-    MealRepo repo = new MealRepo(new MealMemoryContext());
+    MealRepo repo = new MealRepo(new MealContext());
 
     ObjectMapper mapper = new ObjectMapper();
 

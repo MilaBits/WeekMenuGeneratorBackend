@@ -8,22 +8,29 @@ import java.util.Set;
 public class User {
 
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
     public String name;
     public String imagePath;
 
+    @ManyToMany(cascade = javax.persistence.CascadeType.ALL, mappedBy = "participants")
+    private Set<Meal> meals = new HashSet<>();
 
-    @ManyToMany(cascade = {
-            CascadeType.PERSIST,
-            CascadeType.MERGE
-    })
-    @JoinTable(name = "user_ingredient",
-            joinColumns = @JoinColumn(name = "user_id"),
-            inverseJoinColumns = @JoinColumn(name = "ingredient_id")
-    )
-    public Set<Ingredient> foodRestrictions = new HashSet<>();
+    public Set<Meal> getMeals() {
+        return meals;
+    }
+
+    public void setMeals(Set<Meal> meals) {
+        this.meals = meals;
+    }
+
+    @ManyToMany(cascade = javax.persistence.CascadeType.ALL)
+    Set<Ingredient> foodRestrictions = new HashSet<>();
+
+    public void setFoodRestrictions(Set<Ingredient> foodRestrictions) {
+        this.foodRestrictions = foodRestrictions;
+    }
 
     public Set<Ingredient> getFoodRestrictions() {
         return foodRestrictions;

@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class UserContext implements IDataContext<User> {
     @Override
-    public User get() {
+    public User get(int id) {
 
         return null;
     }

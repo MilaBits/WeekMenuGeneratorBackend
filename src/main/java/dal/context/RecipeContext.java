@@ -6,7 +6,7 @@ import java.util.ArrayList;
 
 public class RecipeContext implements IDataContext<Recipe> {
     @Override
-    public Recipe get() {
+    public Recipe get(int id) {
         return null;
     }
 

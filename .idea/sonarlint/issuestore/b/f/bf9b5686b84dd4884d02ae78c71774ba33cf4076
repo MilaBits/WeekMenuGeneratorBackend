@@ -1,7 +1,0 @@
-
-zsquid:S00116"XRename this field "ingredient_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ö¼Ğ×üÿÿÿÿ8©Úä«ì,
-msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(÷Æ—Ä
-‘"squid:ClassVariableVisibilityCheck"YMake ingredient_id a static final constant or non-public and provide accessors if needed.(ö¼Ğ×üÿÿÿÿ8©Úä«ì,
-csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(æû•º
-ˆ"squid:ClassVariableVisibilityCheck"UMake recipe_id a static final constant or non-public and provide accessors if needed.(°É„Æ8•å«ì,
-qsquid:S00116"TRename this field "recipe_id" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°É„Æ8•å«ì,

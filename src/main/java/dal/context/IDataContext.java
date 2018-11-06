@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public interface IDataContext<T> {
 
-    T get();
+    T get(int id);
 
     ArrayList<T> getAll();
 

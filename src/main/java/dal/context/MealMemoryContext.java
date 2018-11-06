@@ -9,7 +9,7 @@ import java.util.*;
 
 public class MealMemoryContext implements IDataContext<Meal> {
     @Override
-    public Meal get() {
+    public Meal get(int id) {
         return null;
     }
 
