@@ -1,5 +1,7 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -11,6 +13,7 @@ public class Ingredient {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long id;
 
+    @JsonBackReference
     @ManyToMany(mappedBy = "foodRestrictions")
     private Set<User> users = new HashSet<>();
 
@@ -22,6 +25,7 @@ public class Ingredient {
         this.users = users;
     }
 
+    @JsonBackReference
     @ManyToMany(cascade = javax.persistence.CascadeType.ALL, mappedBy = "ingredients")
     private Set<Recipe> recipes = new HashSet<>();
 

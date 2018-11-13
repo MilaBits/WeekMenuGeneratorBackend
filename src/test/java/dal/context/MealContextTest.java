@@ -10,6 +10,7 @@ import org.junit.Test;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 import java.util.HashSet;
@@ -24,22 +25,39 @@ public class MealContextTest {
     IDataContext<Meal> mealContext = new MealContext();
 
     private Meal meal;
+    private ArrayList<Meal> meals = new ArrayList<>();
 
     @Before
     public void setUp() {
         meal = new Meal(
                 new Date(),
-                new HashSet(Arrays.asList(new User("Milly", "path", new HashSet(Arrays.asList(new Ingredient("TestIngredient", 15)))))),
-                new Recipe("TestRecipe", "TestDescription", new HashSet(Arrays.asList(new Ingredient("IngredientTest", 25)))));
+                new HashSet(Arrays.asList(
+                        new User("Pete", "path", new HashSet(Arrays.asList(new Ingredient("TestIngredient", 15), new Ingredient("Banana", 15)))),
+                        new User("Milly", "path", new HashSet(Arrays.asList(new Ingredient("TestIngredient", 15)))))),
+                new Recipe("Banana Thing", "Bananannaana na na", new HashSet(Arrays.asList(new Ingredient("IngredientTest", 25), new Ingredient("Banana", 15)))));
+
+        meals.add(meal);
+        meals.add(new Meal(
+                new Date(),
+                new HashSet(Arrays.asList(
+                        new User("Pete", "path", new HashSet(Arrays.asList(new Ingredient("TestIngredient", 15), new Ingredient("Banana", 15)))))),
+                new Recipe("TestRecipe", "TestDescription", new HashSet(Arrays.asList(new Ingredient("IngredientTest", 25))))));
 
         entityManager = factory.createEntityManager();
-        entityManager.getTransaction().begin();
 
-        entityManager.persist(meal);
+        for (Meal item : meals) {
+            entityManager.getTransaction().begin();
+            entityManager.persist(item);
+            entityManager.getTransaction().commit();
+        }
 
-        entityManager.getTransaction().commit();
         entityManager.close();
 
+    }
+
+    @Test
+    public void FillDB() {
+        // empty, just needs to run setup
     }
 
     @Test

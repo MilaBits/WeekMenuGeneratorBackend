@@ -1,5 +1,7 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
@@ -14,6 +16,7 @@ public class Recipe {
     public String name;
     public String description;
 
+    @JsonManagedReference
     @ManyToMany(cascade = javax.persistence.CascadeType.ALL)
     Set<Ingredient> ingredients = new HashSet<>();
 

@@ -1,5 +1,7 @@
 package domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.HashSet;
@@ -24,6 +26,7 @@ public class Meal {
         return date;
     }
 
+    @JsonManagedReference
     @ManyToMany(cascade = CascadeType.ALL)
     public Set<User> participants = new HashSet<>();
 
