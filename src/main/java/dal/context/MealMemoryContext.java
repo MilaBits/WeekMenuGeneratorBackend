@@ -25,86 +25,70 @@ public class MealMemoryContext implements IDataContext<Meal> {
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
-        mock.add(new Meal(
-                new Date(cal.getTimeInMillis()),
-                new HashSet(Arrays.asList(
-                        new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
-                        new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
-                new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));
         mock.add(new Meal(
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
-        mock.add(new Meal(
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));mock.add(new Meal(
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
-        mock.add(new Meal(
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));mock.add(new Meal(
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
-        mock.add(new Meal(
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));mock.add(new Meal(
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
-        mock.add(new Meal(
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));mock.add(new Meal(
                 new Date(),
                 new HashSet(Arrays.asList(
                         new User("Milly", "", new HashSet(Arrays.asList(
-                                new Ingredient("Sugar", 5),
-                                new Ingredient("Salt", 5)))),
+                                new Ingredient("Sugar", 5, ""),
+                                new Ingredient("Salt", 5, "")))),
                         new User("Tim", "", new HashSet(Arrays.asList(
-                                new Ingredient("Milk", 5),
-                                new Ingredient("Sugar", 5)))))),
+                                new Ingredient("Milk", 5, ""),
+                                new Ingredient("Sugar", 5, "")))))),
                 new Recipe("Pasta", "Test food", new HashSet(Arrays.asList(
-                        new Ingredient("Sugar", 5),
-                        new Ingredient("Sugar", 5))))));
+                        new Ingredient("Sugar", 5, ""),
+                        new Ingredient("Sugar", 5, ""))))));
 
         return mock;
     }

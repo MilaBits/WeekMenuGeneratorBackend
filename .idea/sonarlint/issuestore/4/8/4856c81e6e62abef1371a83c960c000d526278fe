@@ -1,6 +1,0 @@
-
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(œ‰Èüÿÿÿÿ8–…ÇÊî,
-asquid:S1192"FDefine a constant instead of duplicating this literal "Milly" 7 times.(»¼­Q8–…ÇÊî,
-bsquid:S1192"FDefine a constant instead of duplicating this literal "Pasta" 7 times.(ÚÑò8–…ÇÊî,
-csquid:S1192"GDefine a constant instead of duplicating this literal "Sugar" 28 times.(Ûàú¨8–…ÇÊî,
-fsquid:S1192"JDefine a constant instead of duplicating this literal "Test food" 7 times.(ÚÑò8–…ÇÊî,

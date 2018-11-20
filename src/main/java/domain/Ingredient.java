@@ -38,14 +38,16 @@ public class Ingredient {
     }
 
     public String name;
-    public int amount;
+    public double amount;
+    public String unit;
 
     public Ingredient() {
     }
 
-    public Ingredient(String name, int amount) {
+    public Ingredient(String name, double amount, String unit) {
         this.name = name;
         this.amount = amount;
+        this.unit = unit;
     }
 
     public void addUser(User user) {

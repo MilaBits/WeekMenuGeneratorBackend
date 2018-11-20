@@ -1,4 +1,0 @@
-
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(œ‰Èüÿÿÿÿ8éó†Ëî,
-msquid:S2077"RUse a variable binding mechanism to construct this query instead of concatenation.(³²‚t8éó†Ëî,
-tsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(±ï¸}8ÿ¤–Ìî,

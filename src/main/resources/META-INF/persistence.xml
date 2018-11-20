@@ -14,7 +14,7 @@
             <property name="javax.persistence.jdbc.user" value="root"/>
             <!--<property name="eclipselink.ddl-generation" value="drop-and-create-tables"/>-->
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
-            <property name="eclipselink.logging.logger" value="DefaultLogger"/>
+            <property name="eclipselink.logging.logger" value="DefaultLogger"/>w
             <property name="eclipselink.logging.level" value="FINE"/>
         </properties>
     </persistence-unit>

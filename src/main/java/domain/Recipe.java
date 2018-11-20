@@ -14,6 +14,7 @@ public class Recipe {
     public Long id;
 
     public String name;
+    @Column(length = 10000)
     public String description;
 
     @JsonManagedReference
