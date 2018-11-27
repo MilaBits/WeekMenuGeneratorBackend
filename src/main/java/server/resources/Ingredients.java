@@ -24,7 +24,7 @@ public class Ingredients {
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response ingredients() {
+    public Response getIngredients() {
 
         ResponseCode code = ResponseCode.OK;
 
