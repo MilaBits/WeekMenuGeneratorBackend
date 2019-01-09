@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/JettyJerseyCors.iml" filepath="$PROJECT_DIR$/JettyJerseyCors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WeekMenuGenerator.iml" filepath="$PROJECT_DIR$/WeekMenuGenerator.iml" />
     </modules>
   </component>
 </project>
