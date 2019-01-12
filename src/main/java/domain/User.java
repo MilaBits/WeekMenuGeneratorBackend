@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,8 +19,12 @@ public class User {
     public String imagePath;
 
     @JsonBackReference
-    @ManyToMany(cascade = javax.persistence.CascadeType.ALL, mappedBy = "participants")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "participants")
     private Set<Meal> meals = new HashSet<>();
+
+    public void setMeals(Collection<Meal> meals) {
+        this.meals = new HashSet<>(meals);
+    }
 
     public Set<Meal> getMeals() {
         return meals;
@@ -30,8 +35,12 @@ public class User {
     }
 
     @JsonManagedReference
-    @ManyToMany(cascade = javax.persistence.CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     Set<Ingredient> foodRestrictions = new HashSet<>();
+
+    public void setFoodRestrictions(Collection<Ingredient> foodRestrictions) {
+        this.foodRestrictions = new HashSet<>(foodRestrictions);
+    }
 
     public void setFoodRestrictions(Set<Ingredient> foodRestrictions) {
         this.foodRestrictions = foodRestrictions;

@@ -1,11 +1,11 @@
-package dal.context;
+package dal;
 
 public class MealContextTest {
 
 //    private EntityManagerFactory factory = Persistence.createEntityManagerFactory("PersistenceUnit");
 //    EntityManager entityManager;
 //
-//    IDataContext<Meal> mealContext = new MealContext();
+//    IDataContext<Meal> mealContext = new MealActions();
 //
 //    private Meal meal;
 //    private ArrayList<Meal> meals = new ArrayList<>();

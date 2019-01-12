@@ -3,10 +3,7 @@ package domain;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
-import java.util.Date;
-import java.util.HashSet;
-import java.util.Objects;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 public class Meal {
@@ -27,8 +24,12 @@ public class Meal {
     }
 
     @JsonManagedReference
-    @ManyToMany(cascade = CascadeType.ALL)
-    public Set<User> participants = new HashSet<>();
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    Set<User> participants = new HashSet<>();
+
+    public void setParticipants(Collection<User> participants) {
+        this.participants = new HashSet<>(participants);
+    }
 
     public Set<User> getParticipants() {
         return participants;
@@ -38,7 +39,7 @@ public class Meal {
         this.participants = participants;
     }
 
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @OneToOne(cascade = CascadeType.ALL)
     Recipe recipe;
 
     public Recipe getRecipe() {

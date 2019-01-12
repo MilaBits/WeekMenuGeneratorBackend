@@ -2,23 +2,23 @@ package server.resources;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dal.context.MealContext;
-import dal.repo.MealRepo;
+import dal.MealActions;
+import dal.UserActions;
 import domain.Meal;
+import domain.User;
 import server.ApiResponseMessage;
 import server.ResponseCode;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import java.util.ArrayList;
 
-@Path("/meals")
+@Path("meals")
 public class Meals {
 
-    MealRepo repo = new MealRepo(new MealContext());
+    MealActions mealActions = new MealActions();
+    UserActions userActions = new UserActions();
 
     ObjectMapper mapper = new ObjectMapper();
 
@@ -28,10 +28,36 @@ public class Meals {
 
         ResponseCode code = ResponseCode.OK;
 
-        ArrayList<Meal> meals = repo.getAll();
+        ArrayList<Meal> meals = mealActions.getAll();
         String message = null;
         try {
             message = mapper.writeValueAsString(meals);
+        } catch (JsonProcessingException e) {
+            code = ResponseCode.ERROR;
+            e.printStackTrace();
+        }
+
+        return Response.ok().entity(new ApiResponseMessage(code, message)).build();
+    }
+
+    @Path("{id}/updateUsers")
+    @PUT
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response updateUser(Meal meal, @PathParam("id") long id) {
+
+        ResponseCode code = ResponseCode.OK;
+
+        for (User user : meal.getParticipants()) {
+            if (user.id == null){
+                user = userActions.addUser(user);
+            }
+        }
+
+        Meal updatedMeal = mealActions.updateUsers(id, meal);
+
+        String message = null;
+        try {
+            message = mapper.writeValueAsString("");
         } catch (JsonProcessingException e) {
             code = ResponseCode.ERROR;
             e.printStackTrace();

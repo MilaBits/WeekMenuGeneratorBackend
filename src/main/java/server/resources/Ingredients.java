@@ -2,8 +2,7 @@ package server.resources;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import dal.context.IngredientContext;
-import dal.repo.IngredientRepo;
+import dal.IngredientActions;
 import domain.Ingredient;
 import server.ApiResponseMessage;
 import server.ResponseCode;
@@ -18,7 +17,7 @@ import java.util.ArrayList;
 @Path("/ingredients")
 public class Ingredients {
 
-    IngredientRepo repo = new IngredientRepo(new IngredientContext());
+    IngredientActions ingredientActions = new IngredientActions();
 
     ObjectMapper mapper = new ObjectMapper();
 
@@ -28,7 +27,8 @@ public class Ingredients {
 
         ResponseCode code = ResponseCode.OK;
 
-        ArrayList<Ingredient> ingredients = repo.getAll();
+        ArrayList<Ingredient> ingredients = ingredientActions.getAll();
+
         String message = null;
         try {
             message = mapper.writeValueAsString(ingredients);

@@ -1,4 +1,4 @@
-package dal.context;
+package dal;
 
 import domain.Ingredient;
 
@@ -6,9 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 
-public class IngredientContext extends DataContext implements IDataContext<Ingredient> {
+public class IngredientActions extends DataContext {
 
-    @Override
     public Ingredient get(int id) {
         EntityManager em = getEntityManager;
 
@@ -17,7 +16,6 @@ public class IngredientContext extends DataContext implements IDataContext<Ingre
         return query.getSingleResult();
     }
 
-    @Override
     public ArrayList<Ingredient> getAll() {
         EntityManager em = getEntityManager;
 
@@ -26,17 +24,14 @@ public class IngredientContext extends DataContext implements IDataContext<Ingre
         return new ArrayList<Ingredient>(query.getResultList());
     }
 
-    @Override
     public Ingredient post() {
         return null;
     }
 
-    @Override
     public Ingredient put() {
         return null;
     }
 
-    @Override
     public Ingredient delete() {
         return null;
     }

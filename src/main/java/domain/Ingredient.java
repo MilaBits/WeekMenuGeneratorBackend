@@ -3,6 +3,7 @@ package domain;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -14,8 +15,12 @@ public class Ingredient {
     public Long id;
 
     @JsonBackReference
-    @ManyToMany(mappedBy = "foodRestrictions")
+    @ManyToMany(fetch = FetchType.EAGER, mappedBy = "foodRestrictions")
     private Set<User> users = new HashSet<>();
+
+    public void setUsers(Collection<User> users) {
+        this.users = new HashSet<>(users);
+    }
 
     public Set<User> getUsers() {
         return users;
@@ -26,8 +31,12 @@ public class Ingredient {
     }
 
     @JsonBackReference
-    @ManyToMany(cascade = javax.persistence.CascadeType.ALL, mappedBy = "ingredients")
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "ingredients")
     private Set<Recipe> recipes = new HashSet<>();
+
+    public void setRecipes(Collection<Recipe> recipes) {
+        this.recipes = new HashSet<>(recipes);
+    }
 
     public Set<Recipe> getRecipes() {
         return recipes;

@@ -1,4 +1,4 @@
-package dal.context;
+package dal;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

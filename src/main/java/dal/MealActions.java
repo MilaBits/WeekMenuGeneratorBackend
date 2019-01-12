@@ -1,4 +1,4 @@
-package dal.context;
+package dal;
 
 import domain.Meal;
 
@@ -6,9 +6,8 @@ import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 import java.util.ArrayList;
 
-public class MealContext extends DataContext implements IDataContext<Meal> {
+public class MealActions extends DataContext {
 
-    @Override
     public Meal get(int id) {
         EntityManager em = getEntityManager;
 
@@ -17,7 +16,6 @@ public class MealContext extends DataContext implements IDataContext<Meal> {
         return query.getSingleResult();
     }
 
-    @Override
     public ArrayList<Meal> getAll() {
         EntityManager em = getEntityManager;
 
@@ -26,18 +24,16 @@ public class MealContext extends DataContext implements IDataContext<Meal> {
         return new ArrayList<Meal>(query.getResultList());
     }
 
-    @Override
-    public Meal post() {
-        return null;
-    }
+    public Meal updateUsers(long id, Meal meal) {
+        EntityManager em = getEntityManager;
 
-    @Override
-    public Meal put() {
-        return null;
-    }
+        Meal existingMeal = em.getReference(Meal.class, id);
 
-    @Override
-    public Meal delete() {
-        return null;
+        em.getTransaction().begin();
+        existingMeal.setParticipants(meal.getParticipants()); // not detected automatically
+//        JDOHelper.makeDirty(employee, "projects"); // reported as dirty
+        em.getTransaction().commit();
+
+        return existingMeal;
     }
 }

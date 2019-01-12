@@ -3,6 +3,7 @@ package domain;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -18,8 +19,12 @@ public class Recipe {
     public String description;
 
     @JsonManagedReference
-    @ManyToMany(cascade = javax.persistence.CascadeType.ALL)
+    @ManyToMany(cascade = CascadeType.ALL)
     Set<Ingredient> ingredients = new HashSet<>();
+
+    public void setIngredients(Collection<Ingredient> ingredients) {
+        this.ingredients = new HashSet<>(ingredients);
+    }
 
     public Set<Ingredient> getIngredients() {
         return ingredients;
